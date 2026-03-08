@@ -5,44 +5,44 @@
 // Even though Symbol is a type, it behaves differently from strings
 //const mysym = Symbol("*");
 
-// // // Object literal
-// // const JsUser = {
-// //     name: "Humaira",
-// //     age: 20,
-// //     location: "Karachi",
-// //     // To use a Symbol as a key, we need to wrap it in []
-// //     [mysym]: "*", 
-// //     email: "humairabaksh38@gmail.com",
-// //     isLoggedIn: false,
-// //     lastLoginDays: ["Mon", "Sat"]
-// // };
+// // Object literal
+// const JsUser = {
+//     name: "Humaira",
+//     age: 20,
+//     location: "Karachi",
+//     // To use a Symbol as a key, we need to wrap it in []
+//     [mysym]: "*", 
+//     email: "humairabaksh38@gmail.com",
+//     isLoggedIn: false,
+//     lastLoginDays: ["Mon", "Sat"]
+// };
 
-// // // Accessing properties
-// // console.log(JsUser.email);      // Dot notation
-// // console.log(JsUser["email"]);   // Bracket notation (needed if property name is a string or dynamic)
+// // Accessing properties
+// console.log(JsUser.email);      // Dot notation
+// console.log(JsUser["email"]);   // Bracket notation (needed if property name is a string or dynamic)
 
-// // // Accessing Symbol property
-// // console.log(typeof JsUser.mysym); // undefined (because 'mysym' is not a string key in object)
-// // console.log(JsUser[mysym]);       // Correct way to access Symbol-keyed property
+// // Accessing Symbol property
+// console.log(typeof JsUser.mysym); // undefined (because 'mysym' is not a string key in object)
+// console.log(JsUser[mysym]);       // Correct way to access Symbol-keyed property
 
-// // Freeze the object to make it immutable
-// // Object.freeze(JsUser);
-// // JsUser.email = "Humaira@YT.com";  // This won't work because object is frozen
-// // console.log(JsUser);
+// Freeze the object to make it immutable
+// Object.freeze(JsUser);
+// JsUser.email = "Humaira@YT.com";  // This won't work because object is frozen
+// console.log(JsUser);
 
-// // // Create an empty object to hold a function
-// // const myfunc = {}
+// // Create an empty object to hold a function
+// const myfunc = {}
 
-// // // Add a method to the object
-// // myfunc.greeting = function () {
-// //     console.log("Hello World");
-// // }
+// // Add a method to the object
+// myfunc.greeting = function () {
+//     console.log("Hello World");
+// }
 
-// //Printing the function itself (reference, not executed)
-// // console.log(myfunc.greeting);
+//Printing the function itself (reference, not executed)
+// console.log(myfunc.greeting);
 
-// // // Executing the function
-//  console.log(myfunc.greeting());  // Prints "Hello World" and then undefined (because function has no return)
+// // Executing the function
+ console.log(myfunc.greeting());  // Prints "Hello World" and then undefined (because function has no return)
 
 
 //  JsUser.greetings = function () {

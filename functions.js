@@ -1,4 +1,13 @@
 
+
+//---------------methods and functions----------
+
+//method: Wo function jo ksi aur object k andr use kre jae
+//function:  reusable code 
+
+
+//Agar method array ko iterate kar raha hai → to value parameter milega.
+
 //even though we put () empty we have to use it -> defintion of function
 function MyName()
 {
@@ -138,6 +147,8 @@ let addtwo = function (num){
 
 //this keyword => current context ko btata hai 
 
+//arrow func apna this nhi banta wo scope ka this use krta 
+
 const userDetail ={
 
     //current context these 2 only 
@@ -164,3 +175,329 @@ userDetail.welcomeMsg()
 //username ko ksi ne agr change krdia in that case : 
 userDetail.username = "Bushra"
 userDetail.welcomeMsg()
+
+// jab khali call kia bht sara data 
+// function tea(){
+
+//     agr ye line add krein tou undefined arha 
+//  console.log(this.username);
+//     console.log(this);
+    
+// }
+
+// tea()
+
+
+//---->How to declare functions<----
+
+//arrow funct mai {} aega not undefined
+const tea = () =>{
+    let username = "Humaira"
+    console.log(this);
+}
+
+tea()
+
+//---------------------ARROW FUNCs----------------------
+
+// //(work) =>{block of code }
+// const addTwoNo = (numb1, numb2) => {
+//     return numb1+numb2
+// }
+
+// //const addTwoNo => arrow func k val ko var mai store kr rhe 
+// const Multi = (numb1, numb2) => {
+//     return numb1*numb2;
+// };
+
+// console.log(`Value of multiply is `+Multi(3, 4));
+
+//implicit function:
+// aik line statement tou return ki need nahi , agr () use tou return nahi agr {} use tu return must 
+// const addTwoNos = (numb1, numb2) => (numb1+numb2) //can also do numb1+numb2
+
+// console.log(addTwoNos(3, 4));
+
+
+// //It can be also like this: without any para //func is not accepting argurments
+// const printHello = () =>{
+//     console.log("Hello")
+// }
+
+//-------------------Obj with arrow-------------
+
+//ghlt : const add = (a,b) => {username:"Humaira"} js ko lgae ga ye block hai 
+
+
+//objs mai must () use honge
+// const add = (no1 , no2) => ({username: "Humaira"})
+
+// console.log(add(3, 4));
+
+// const myArray = [2, 34 ,5 ,6]
+// myArray.forEach()
+
+
+//-----------------------------PRACTICE-------------
+
+function VowelsCount(string){
+let count =0;
+for(let i = 0; i<string.length; i++){
+
+    //string = "Humaira" agr string === a kia mtlb hmne a ko compare kia string se but
+    //we have to check the val at every index string[0] ="H" and so on
+
+    if(string[i] === "a" || string[i] === "e" || string[i] === "i"   || string[i] === "o"   || string[i] === "u" )
+    //agr count += string likh tu wo pori string val dega not vowels 
+        count += 1;
+}
+console.log("No of vowels in "+string+ " = " +count);
+}
+
+VowelsCount("Humaira")
+
+
+//Same question with arrow functions:
+
+const countVow = (string)=>{
+
+    let count =0;
+for(let i = 0; i<string.length; i++){
+
+    //string = "Humaira" agr string === a kia mtlb hmne a ko compare kia string se but
+    //we have to check the val at every index string[0] ="H" and so on
+
+    if(string[i] === "a" || string[i] === "e" || string[i] === "i"   || string[i] === "o"   || string[i] === "u" )
+    //agr count += string likh tu wo pori string val dega not vowels 
+        count += 1;
+}
+console.log("No of vowels in "+string+ " = " +count);
+
+}
+
+countVow("Hello World")
+
+
+//--------Reduce Method-------------(min, max,avrg,sum )
+//multiple val hain aur unehin calc kr k aik single val arhi ho
+//filter/ map/ reduce same => array ko iterate krte hain sab
+
+//Ye poore array ko combine karke ek single value banata hai.
+ 
+//max , minimum no's 
+let array  = [12, 32, 23, 14]
+
+const max = array.reduce((prev, cur)=>{
+    return prev > cur? prev : cur;
+});
+console.log(max)
+
+
+//For sum calculate = 10
+
+let arr = [1, 2, 3, 4]
+const output = arr.reduce((res, cur)=>{
+    return res + cur
+});
+console.log(output)
+
+
+//------------------ARRAYMETHODS :(map)
+
+//use for 1, 1 array k index pe ja k kam krna like for each history
+//new array bhi bnadeta hai ye -> val use kr k new array bnana ho tu ye hai
+
+//val error nahi dega q k in funcs ka para hi val declaration hai
+
+
+// map aur filter mai 3 para hoskte hain : array.map((value, index, array) => {})
+
+//MAP: Hr item ko transform krdeta but items ki quantity same rhti 
+
+let nums = [44, 5, 67 , 12]
+let newArr =  nums.map((val)=>{
+    return val * val 
+});
+console.log(newArr);
+
+
+//---------------------PRACTICE(MAP)-------------------
+
+let ar = [3, 44, 5, 1,7]
+let sqr = ar.map((val)=>{
+
+//aise bhi hoskta aur yhn hm return krwa k print bhi krwa skte hain
+//console.log(val * val);
+return val*val
+});
+console.log(sqr);
+
+//10% tax add:
+let prices = [100, 200, 300]
+let tax = prices.map(val => val+10)
+   console.log(tax);
+
+
+// Names ko uppercase mai convert: 
+let names = ["ali", "sara", "humaira"];
+let upp = names.map((val)=>{
+return val.toUpperCase()
+})
+console.log(upp);
+
+
+//-------------------------(Filter Methods ) + PRACTICE-------------
+
+
+//filter methods => ksi condition ki base pe val filter krna
+
+let arrs = [3, 4, 5,6 , 7,8, 9] 
+let even_arr = arrs.filter((val) =>{
+    return val % 2 == 0
+
+});
+console.log(even_arr);
+
+
+//filter mai call back hota jo ya tu true/ false hi rtrn krta hai
+
+//90+ marks ka array bnana hai
+
+let marks = [87, 93, 64, 99, 82 , 90, 98]
+let toppers = marks.filter((val)=>{
+    return val > 90
+});
+
+console.log(toppers);
+
+
+//3 se divisible aur < 10 wale number print:
+
+let nmb = [3, 6, 9, 12, 15]
+let filtered = nmb.filter(val=>  val % 3 === 0 && val >10)
+console.log("val that are divisible by 3 and > 10 : "+filtered);
+
+//> or = 18 wali val print
+//parameter => expression
+
+let age = [12, 18, 22, 15, 30]
+//val => (val>=18) => current val (condition)
+let res = age.filter(val => val >= 18)
+console.log(res);
+
+//word length > 4 wali val print
+
+let words = ["cat", "dog", "Elephant" , "Lions"];
+let animals = words.filter(val => val.length >= 4)
+console.log(animals);
+
+//-----------------------PRACTICE (Filter+map)----------
+
+//even nmbrs + square of even nos
+
+// let nmbrs = [1, 2, 3, 4, 5, 6, 7, 10];
+// let results = nmbrs
+// .filter(val => val % 2 === 0)
+// .map (val => val*val )
+// console.log(results)
+
+let nmbr = [1, 2, 3, 4, 5, 6, 7, 10];
+let result = nmbr.filter(val=>val % 2 === 0 ).map(val => val * val)
+console.log("nmbrs divisible by 2 and there square = ")
+console.log(result);
+
+
+//OUTPUT GUESS: return nhi lagya tu val are undefined agr lagya tu [15, 25, 35 ]
+
+let numbe = [10,20,30];
+
+let results = numbe.map(val => {
+  return  val + 5;
+});
+
+console.log(results);
+
+//------------------------------------------------
+
+//for calculating no that user wants to multiply or etc like 1, 2,3 , 
+//tou when user will enter 3 tu 1, 2, 3 then sum and then factorial aega 
+
+// let n = prompt("Enter a number: ")
+// let aray = [];
+
+// for(let i = 1; i<n; i++) {
+//     aray [i-1] = i;
+// }
+
+// console.log(aray)
+// let sum = aray.reduce((res, cur)=>{
+
+//     return res + cur;
+// });
+// console.log(sum);
+
+// let factorial = aray.reduce((res, cur)=>{
+
+//     return res * cur;
+// });
+// console.log("Facto of the " +n +factorial);
+
+//----------------------------Immediately invoked function expression -----------
+
+//global scope k pollution se prblm hoti hai tu usy var, declaration htane k liye isy use kra 
+
+//code end show krne k liye ; imp
+//paranthesis tu pora code of block ban jata
+// (function chai(){
+// console.log("DB connected");
+// }) ();
+
+// //funct defi pehla wala () dosra execution () -> named IIFE
+
+
+// ( function me () {
+//     console.log("DB connected two");
+    
+// }) ();
+
+// ( function chai() {
+//     console.log("DB connected two");
+    
+// }) ();
+
+
+//name ko praa pass kra  -> unnamed iife
+// ((name) => {
+//     console.log(`DB connected two ${name}`);
+    
+// }) ("Humaira");
+
+//------------------------------PRACTICE(FOR-EACH)--------------------
+
+//higher order func/ method => foreach loop -> aise func jo dosre func ko as a parameter le lete hain ya func jo para use kr rha usy return krte hain
+// also call back 
+
+let num = [1, 2, 3, 4,5,6]
+
+// arry ki jaga pe num likha array ki val  aur element ki jaga pr val
+num.forEach((num) => {
+    console.log("Numbers are: " +num);
+    console.log("Square of numbers are: " +num * num);
+});
+
+//number printing =>simple
+let numb = [3, 4, 5, 1]
+numb.forEach(numb => {
+    console.log(numb);
+}); 
+
+//we can pass array.forEach((value, index, array) => {
+   
+let fruits = ["apple", "mango", "banana"];
+fruits.forEach((val, index ) => {
+    console.log(index, val);
+    
+});
+
+
+

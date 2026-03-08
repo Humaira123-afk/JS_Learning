@@ -1,7 +1,28 @@
+
+//Template literals:
+
+//string interpolation: with $()
+//for 
+
 const name =  "Humaira";
 const age = 20;
 
 console.log(`My name is ${name} and my age is ${age}`);
+
+
+//also: agr objects ko as a string krna ho use:
+
+let obj = {
+    item: "pen", 
+    price: 10,
+};
+
+console.log(`The cost of ${obj.item} is ${obj.price} rupees `)
+
+//for escape char:
+
+console.log("Humaira\nBibi")
+
 
 //second way to declare string =>
 
@@ -20,6 +41,11 @@ console.log(`My name is ${name} and my age is ${age}`);
     //is mai neg val bhi ati hain and also start from last / reverse
     const anotherString = Gname.slice(-7,3)
     console.log(anotherString)
+
+
+    //length of the string check
+    let str = "Humaira Bibi"
+    console.log ("length of " + str +" is: " +str.length)
 
     //mjhy form waghra mai kam aega when we have to remove spaces/ extra one
     const newStringOne = " Humaira " 
