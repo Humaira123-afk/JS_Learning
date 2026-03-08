@@ -56,6 +56,13 @@ console.log("Humaira\nBibi")
 
     console.log(url.replace('%20','-')); //=> replace %20 by - 
 
+    
+     const rplc = "https://humaira.com/humaira%20bibi"
+
+    console.log(url.replaceAll('t','h')); //=> replace %20 by - 
+
+
+
     console.log(url.includes('humaira'))//=> humaira hai site mai ya nahi
     console.log(url.includes('bushra'))
 
